@@ -37,7 +37,7 @@ $Object = new Reportage($reportage);
 // It can be more than one person with highest number of sent reports, so output will be an array.
 $highestNumberOfReportsReceived = $Object->highestNumberOfReports('reportsTo'); // can be 'user' or 'reportsTo'
 
-echo '<h4>Users with highest number of reports</h4>';
+echo '<h4>Task A. Users with highest number of reports</h4>';
 echo '<ul>';
 foreach ($highestNumberOfReportsReceived as $value) {
   echo '<li>'.$value.'</li>';
@@ -49,9 +49,19 @@ echo '</ul>';
 // I created function where we can set user name and get all users above that user in descending order.
 $descendingTree = $Object->descendingTree('Allison Meyers');
 
-echo '<h4>List of users in descending order</h4>';
+echo '<h4>Task B (first version). List of users in descending order</h4>';
 echo '<ul>';
 foreach ($descendingTree as $value) {
+  echo '<li>'.$value.'</li>';
+}
+echo '</ul>';
+
+// Task B. Correct.
+$correctTree = $Object->userTreeReverse('Allison Meyers');
+
+echo '<h4>Task B (correct). Tree of users in descending order</h4>';
+echo '<ul>';
+foreach ($correctTree as $value) {
   echo '<li>'.$value.'</li>';
 }
 echo '</ul>';
